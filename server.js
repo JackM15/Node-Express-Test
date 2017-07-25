@@ -59,8 +59,14 @@ app.get("/about", (req, res) => {
 app.get("/bad", (req, res) => {
     res.send({
         errorMessage: "Error handling request."
-    })
+    });
 });
+
+app.get("/projects", (req, res) => {
+    res.render("projects.hbs", {
+        pageTitle: "Portfolio Page"
+    });
+})
 
 //start server (port number, console alert)
 app.listen(port, () => {
