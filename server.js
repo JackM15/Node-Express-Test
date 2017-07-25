@@ -1,6 +1,8 @@
 const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
+//if process.env.PORT doesnt exist, use port 3000 as default
+const port = process.env.PORT || 3000;
 var app = express();
 
 //middleware custom to log to console
@@ -61,6 +63,6 @@ app.get("/bad", (req, res) => {
 });
 
 //start server (port number, console alert)
-app.listen(3000, () => {
-    console.log("Server Started on Port 3000.");
+app.listen(port, () => {
+    console.log(`Server Started on Port ${port}.`);
 });
